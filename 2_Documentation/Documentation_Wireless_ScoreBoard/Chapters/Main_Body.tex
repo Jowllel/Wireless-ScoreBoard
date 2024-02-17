@@ -1,3 +1,55 @@
 \chapter{Main Body}
 \label{cha:Main Body}
 
+\section{Trigger}
+\label{sec:Trigger}
+To trigger the counter of the WSB, there are a few possible solutions. The remote has to be wearable, and it has to be triggered during the game. This is hard to implement, because a usual button is too tiny to press during a game, and it can be frustrating to always aim for the trigger button. Therefore, I decided to use an accelerometer and count the points by simply tapping on the thigh. My idea is to mount the WSB remote on the inside of the thigh or as a knee pad replacement for example in volleyball. Then the vibrations/accelerations travel through the user's body and get measured by the WSB remote. But this can be rather hard, because during sports the body is always accelerating, and it could be hard to distinguish from a usual movement or a "thigh tip". If the accelerometer idea doesn't work out, I would use flexible membrane buttons to control the WSB.
+
+\subsection{Accelerometer}
+\label{ssec:Accelerometer}
+\subsubsection{control LSM303C accelerometer}
+Attention: Mind that the CS\_XL and CS\_MAG have to be pulled up to enable I\textsuperscript{2}C mode. and use external I\textsuperscript{2}C pullups, because on MKI163V1 devBoard are no pullup R's.
+
+slave address: 0b00111010 = 0x3A \cite{DS_LSM303C}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=11.5cm]{Resources/accTestLab.jpeg}
+	\caption{Accelerometer: test setup}
+	\label{fig:accTestLab}
+\end{figure}
+
+\subsubsection{First test the "WHO AM I" register}
+Communication test: reg 0x0F should read as 0x41
+
+\subsubsection{Read acceleration}
+CTRL\_REG1\_A (0x20): 0x3F (Enable XYZ, 100Hz, block data overwriting)
+
+CTRL\_REG2\_A (0x21): 0x00 (disable LPF)
+
+CTRL\_REG3\_A (0x22): 0x00 (disable interrupts)
+
+CTRL\_REG4\_A (0x23): 0x34 (enable I\textsuperscript{2}C, enable auto address increments, FS $\pm$8g)
+
+CTRL\_REG5\_A (0x24): 0x00
+
+CTRL\_REG6\_A (0x25): 0x00
+
+CTRL\_REG7\_A (0x26): 0x00
+\\
+
+STATUS\_REG\_A (0x27):
+Bit 3 set if xyz data is available / Bit 8 set if xyz data overrun.
+
+OUT\_X\_L (0x28)(2bytes)   (0.061mg/LSB) @ FS=8g
+
+OUT\_Y\_L (0x2A)(2bytes)   (0.061mg/LSB) @ FS=8g
+
+OUT\_Z\_L (0x2C)(2bytes)   (0.061mg/LSB) @ FS=8g
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=17cm]{Resources/accTestLA.png}
+	\caption{Accelerometer: Logic Analyzer}
+	\label{fig:accTestLA}
+\end{figure}
