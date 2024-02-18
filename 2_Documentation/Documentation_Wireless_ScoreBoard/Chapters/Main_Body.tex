@@ -57,7 +57,7 @@ OUT\_Z\_L (0x2C)(2bytes)   (0.061mg/LSB) @ FS=8g
 \newpage
 
 \subsubsection{Test Results}
-After looking at the measurement results, I decided that it would be best to populate an accelerometer and the membrane buttons on the PCB, that I have an alternative if the accelerometer doesn't work out. Because it's hard to analyze if the accelerometer as trigger will work out during a game and I can't attach the current breadboard to my thigh to test the accelerometer out.
+After looking at the measurement results, I decided that it would be best to populate an accelerometer and the membrane buttons on the PCB, that I have an alternative if the accelerometer doesn't work out. Because it's hard to analyze if the accelerometer as trigger will work out during a game and I can't attach the current breadboard to my thigh to test the accelerometer out. But for the final design I'll probably choose the "STM LIS2HH12" accelerometer.
 
 \begin{figure}[H]
 	\centering
@@ -67,3 +67,18 @@ After looking at the measurement results, I decided that it would be best to pop
 \end{figure}
 
 I hope that I can differentiate normal sports movement from "thigh taps" by looking at the momental acceleration. In Fig: \ref{fig:accTestMeas}, the middle pulse was a "thigh tap" and the first and last ones are movement from the body, which take a lot longer but don't peak out as high. The shown data is actually the variable "accDelta" from the "6\_Software/dev/LSM303C\_Test/Core/Src/ main.c" file.
+
+\section{Battery Charging R\&D}
+\label{sec:Battery Charging}
+I'm sure, that I'll have to somehow power the WSB Remote as well as the WSB. Because they both have to be portable, I'm planning to use a rechargeable battery. For example Lithium Ion battery. And to use this battery I'll have to implement some protection circuits, as well as charging circuits. Important protection features are:
+\begin{itemize}
+    \item UVP - Under Voltage Protection (So the battery doesn't get broken)
+    \item OVP - Over Voltage Protection (So the battery doesn't get broken)
+    \item OTP - Over Temperature Protection (So the battery doesn't overheat or starts burning)
+    \item OCP - Over Current Protection (So the circuits don't break)
+\end{itemize}
+
+So I started searching for LiIon charging ICs and I had looks at TIs ICs, like the "BQ25180YBGR" or "BQ25155YFPR". But the TI charging ICs are rather complicated and would take me too long to implement. Additionally after buying some samples of these ICs I recognized, that they are CSPs and really tiny, which makes them really hard to solder or make modifications on the PCB. So I got to my favourite semiconductor manufacturer STM and found the perfect IC, the STNS01. I also recognized, that STMs product portfolio is a lot smaller than TIs, which was quite overwhelming. STM only had about 5 ICs to choose from.
+
+\subsection{STNS01 R\&D}
+\label{ssec:STNS01}
