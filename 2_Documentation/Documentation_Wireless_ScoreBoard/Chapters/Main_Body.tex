@@ -1,12 +1,13 @@
 \chapter{Main Body}
 \label{cha:Main Body}
 
-\section{Trigger}
+\section{Trigger R\&D}
 \label{sec:Trigger}
-To trigger the counter of the WSB, there are a few possible solutions. The remote has to be wearable, and it has to be triggered during the game. This is hard to implement, because a usual button is too tiny to press during a game, and it can be frustrating to always aim for the trigger button. Therefore, I decided to use an accelerometer and count the points by simply tapping on the thigh. My idea is to mount the WSB remote on the inside of the thigh or as a knee pad replacement for example in volleyball. Then the vibrations/accelerations travel through the user's body and get measured by the WSB remote. But this can be rather hard, because during sports the body is always accelerating, and it could be hard to distinguish from a usual movement or a "thigh tip". If the accelerometer idea doesn't work out, I would use flexible membrane buttons to control the WSB.
+To trigger the counter of the WSB, there are a few possible solutions. The remote has to be wearable, and it has to be triggered during the game. This is hard to implement, because a usual button is too tiny to press during a game, and it can be frustrating to always aim for the trigger button. Therefore, I decided to use an accelerometer and count the points by simply tapping on the thigh. My idea is to mount the WSB remote on the inside of the thigh or as a knee pad replacement for example in volleyball. Then the vibrations/accelerations travel through the user's body and get measured by the WSB remote. But this can be rather hard, because during sports the body is always accelerating, and it could be hard to distinguish from a usual movement or a "thigh tip". If the accelerometer idea doesn't work out, I would use flexible membrane buttons to control the WSB. 
 
-\subsection{Accelerometer}
+\subsection{Accelerometer R\&D}
 \label{ssec:Accelerometer}
+At my current lab at ETH I found an accelerometer to test out, if I can use it as a trigger.
 \subsubsection{control LSM303C accelerometer}
 Attention: Mind that the CS\_XL and CS\_MAG have to be pulled up to enable I\textsuperscript{2}C mode. and use external I\textsuperscript{2}C pullups, because on MKI163V1 devBoard are no pullup R's.
 
@@ -14,8 +15,8 @@ slave address: 0b00111010 = 0x3A \cite{DS_LSM303C}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=11.5cm]{Resources/accTestLab.jpeg}
-	\caption{Accelerometer: test setup}
+	\includegraphics[width=10cm]{Resources/accTestLab.jpeg}
+	\caption{Accelerometer test: setup}
 	\label{fig:accTestLab}
 \end{figure}
 
@@ -50,6 +51,19 @@ OUT\_Z\_L (0x2C)(2bytes)   (0.061mg/LSB) @ FS=8g
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=17cm]{Resources/accTestLA.png}
-	\caption{Accelerometer: Logic Analyzer}
+	\caption{Accelerometer test: logic analyzer}
 	\label{fig:accTestLA}
 \end{figure}
+\newpage
+
+\subsubsection{Test Results}
+After looking at the measurement results, I decided that it would be best to populate an accelerometer and the membrane buttons on the PCB, that I have an alternative if the accelerometer doesn't work out. Because it's hard to analyze if the accelerometer as trigger will work out during a game and I can't attach the current breadboard to my thigh to test the accelerometer out.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=17cm]{Resources/accTestMeas.png}
+	\caption{Accelerometer test: results}
+	\label{fig:accTestMeas}
+\end{figure}
+
+I hope that I can differentiate normal sports movement from "thigh taps" by looking at the momental acceleration. In Fig: \ref{fig:accTestMeas}, the middle pulse was a "thigh tap" and the first and last ones are movement from the body, which take a lot longer but don't peak out as high. The shown data is actually the variable "accDelta" from the "6\_Software/dev/LSM303C\_Test/Core/Src/ main.c" file.
