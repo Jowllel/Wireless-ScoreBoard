@@ -1,3 +1,45 @@
 \chapter{Introduction}
 \label{cha:Introduction}
 
+
+\section{Mindmap}
+\label{sec:Mindmap}
+
+\vspace{1cm}
+
+\begin{figure}[H]
+	\centering
+    \begin{tikzpicture}[mindmap, grow cyclic, every node/.style=concept, concept color=orange!40, 
+        level 1/.append style={level distance=5cm,sibling angle=90},
+        level 2/.append style={level distance=3cm,sibling angle=45},]
+
+        \node{WSB Remote}
+            child [concept color=blue!30] { 
+                node {Software}
+                child { node {WSB Lib}}
+                child { node {HAL}}
+                child { node {USB DFU}}
+                child { node {Fuel Gauge}}
+            }
+            child [concept color=green!30] { 
+                node {Hardware}
+                child { node {Li-Ion Battery}}
+                child { node {nRF24}}
+                child { node {Accelero-meter}}
+                child { node {STM32}}
+                child { node {PWR Bootstrap}}
+            }
+            child [concept color=red!30] { 
+                node {New Skills}
+                child { node {STM32 SPI}}
+	            child { node {Low Power}}
+	            child { node {Fusion 360}}
+	            child { node {Git}}
+            };
+    \end{tikzpicture}  
+
+    \vspace{1cm}
+
+	\caption{Project Mindmap}
+	\label{fig:Project Mindmap}
+\end{figure}
