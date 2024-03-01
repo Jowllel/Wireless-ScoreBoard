@@ -2,7 +2,7 @@
 \label{cha:Introduction}
 
 
-\section{Mindmap}
+\section{Project Mindmap}
 \label{sec:Mindmap}
 
 \vspace{1cm}
@@ -65,7 +65,23 @@ To realize this project I will mainly use, the SW STM32CubeIDE with HAL, STM32 C
  \hline
  value &  min. & typ. & max. & unit & description \\ [0.5ex] 
  \hline\hline
-  supply voltage & & 5 & & V & over USB \\ 
+ operating temperature & 0 & & 45 & °C & \\ 
+ \hline
+storage temperature & -20 & & 45 & °C & \\ 
+ \hline
+  battery capacity & 230 & 240 & & mAh & @ 3.7V \\ 
+ \hline
+  supply voltage & 4.55 & 5 & 5.4 & V & over USB-C \\ 
+ \hline
+  charging current & & 120 & & mA & \\ 
+ \hline
+  operating current & 1 & & 100 & mA & \\ 
+ \hline
+  shutdown current & & & 10 & uA & @ power off \\ 
+ \hline
+  shutdown current & & & 500 & nA & @ battery over discharge \\ 
+ \hline
+  RF & 2.4 & & 2.525 & GHz & nRF24L01 \\ 
  \hline
 \end{tabular}
     \caption{Technical Details}
