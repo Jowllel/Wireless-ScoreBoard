@@ -73,7 +73,7 @@ void HAL_PCD_MspInit(PCD_HandleTypeDef* pcdHandle)
     PA11     ------> USB_OTG_FS_DM
     PA12     ------> USB_OTG_FS_DP
     */
-    GPIO_InitStruct.Pin = USB_DM_Pin|USB_DP_Pin;
+    GPIO_InitStruct.Pin = USB_N_Pin|USB_P_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
@@ -103,7 +103,7 @@ void HAL_PCD_MspDeInit(PCD_HandleTypeDef* pcdHandle)
     PA11     ------> USB_OTG_FS_DM
     PA12     ------> USB_OTG_FS_DP
     */
-    HAL_GPIO_DeInit(GPIOA, USB_DM_Pin|USB_DP_Pin);
+    HAL_GPIO_DeInit(GPIOA, USB_N_Pin|USB_P_Pin);
 
   /* USER CODE BEGIN USB_OTG_FS_MspDeInit 1 */
 
