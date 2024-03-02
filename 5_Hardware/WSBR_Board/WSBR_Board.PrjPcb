@@ -88,16 +88,16 @@ Name=Author
 Value=Joel Schaller
 
 [Parameter2]
-Name=SubProject
-Value=Remote
+Name=Project
+Value=Wireless ScoreBoard
 
 [Parameter3]
 Name=Revision
 Value=1.0
 
 [Parameter4]
-Name=Project
-Value=Wireless ScoreBoard
+Name=SubProject
+Value=Remote
 
 [Configuration1]
 Name=Sources
