@@ -21,7 +21,7 @@ TargetOutputMedium=Folder Structure
 VariantName=default
 VariantScope=1
 CurrentConfigurationName=
-TargetPrinter=\\pia01.d.ethz.ch\card-hp
+TargetPrinter=HPM479fdn (HP Color LaserJet Pro M478f-9f)
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 OutputMedium1=Print Job
 OutputMedium1_Type=Printer
@@ -68,22 +68,22 @@ Configuration2_Item3=Comment=True|Description=True|Manufacturer=True|Manufacture
 Configuration2_Name4=SortOrder
 Configuration2_Item4=Designator=Up
 Configuration2_Name5=VisibleOrder
-Configuration2_Item5=Fitted=120|Designator=120|Comment=120|Value=120|Description=120|Manufacturer=120|Manufacturer Part Number=120|Supplier=120|Supplier Part Number=120|Quantity=89
+Configuration2_Item5=Fitted=120|Designator=120|Comment=120|Value=120|Description=120|Manufacturer=120|Manufacturer Part Number=120|Supplier=120|Supplier Part Number=120|Quantity=120
 Configuration2_Name6=VisibleOrder_Flat
-Configuration2_Item6=Fitted=120|Designator=120|Comment=120|Value=120|Description=120|Manufacturer=120|Manufacturer Part Number=120|Supplier=120|Supplier Part Number=120|Quantity=89
+Configuration2_Item6=Fitted=120|Designator=120|Comment=120|Value=120|Description=120|Manufacturer=120|Manufacturer Part Number=120|Supplier=120|Supplier Part Number=120|Quantity=120
 
 [PublishSettings]
-OutputFilePath2=Project Outputs for Free Documents\.PDF
+OutputFilePath2=D:\OneDrive\Beruflich\TBZ\Projects\Wireless-ScoreBoard\5_Hardware\WSBR_Board\Project Outputs for WSBR_Board\WSBR_Board.PDF
 ReleaseManaged2=1
-OutputBasePath2=Project Outputs for Free Documents
+OutputBasePath2=Project Outputs for WSBR_Board
 OutputPathMedia2=
 OutputPathMediaValue2=
 OutputPathOutputer2=[Output Type]
 OutputPathOutputerPrefix2=
 OutputPathOutputerValue2=
-OutputFileName2=WSBR_Board.PDF
+OutputFileName2=WSBR_Board.pdf
 OutputFileNameMulti2=
-UseOutputNameForMulti2=1
+UseOutputNameForMulti2=0
 OutputFileNameSpecial2=
 OpenOutput2=1
 PromptOverwrite2=1
@@ -100,9 +100,9 @@ ShowComponentParameters2=1
 GlobalBookmarks2=0
 PDFACompliance2=Disabled
 PDFVersion2=Default
-OutputFilePath3=Project Outputs for Free Documents\
+OutputFilePath3=D:\OneDrive\Beruflich\TBZ\Projects\Wireless-ScoreBoard\5_Hardware\WSBR_Board\Project Outputs for WSBR_Board\
 ReleaseManaged3=1
-OutputBasePath3=Project Outputs for Free Documents
+OutputBasePath3=Project Outputs for WSBR_Board
 OutputPathMedia3=
 OutputPathMediaValue3=
 OutputPathOutputer3=[Output Type]
@@ -115,7 +115,7 @@ OutputFileNameSpecial3=
 OpenOutput3=1
 OutputFilePath4=
 ReleaseManaged4=1
-OutputBasePath4=
+OutputBasePath4=Project Outputs for WSBR_Board
 OutputPathMedia4=
 OutputPathMediaValue4=
 OutputPathOutputer4=[Output Type]
@@ -152,9 +152,9 @@ WmvVideoCodecName4=Windows Media Video V7
 WmvQuality4=80
 
 [GeneratedFilesSettings]
-RelativeOutputPath2=Project Outputs for Free Documents\.PDF
+RelativeOutputPath2=D:\OneDrive\Beruflich\TBZ\Projects\Wireless-ScoreBoard\5_Hardware\WSBR_Board\Project Outputs for WSBR_Board\WSBR_Board.PDF
 OpenOutputs2=1
-RelativeOutputPath3=Project Outputs for Free Documents\
+RelativeOutputPath3=D:\OneDrive\Beruflich\TBZ\Projects\Wireless-ScoreBoard\5_Hardware\WSBR_Board\Project Outputs for WSBR_Board\
 OpenOutputs3=1
 AddToProject3=1
 TimestampFolder3=0
