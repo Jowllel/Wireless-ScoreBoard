@@ -25,3 +25,5 @@
 /5_Hardware/WSBR_Board/Project Logs for WSBR_Board/*.LOG
 /5_Hardware/WSBR_Board/*.PrjPcbStructure
 /5_Hardware/WSBR_Board/__Previews/*.SchDocPreview
+/6_Software/Firmware_WSBR/.settings/language.settings.xml
+/5_Hardware/WSBR_Board/Project Outputs for WSBR_Board/Status Report.Txt
