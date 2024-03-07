@@ -83,8 +83,43 @@ So I started searching for LiIon charging ICs and I had looks at TIs ICs, like t
 
 \section{Remote PCB}
 \label{sec:Remote PCB}
-The remote PCB connects all components together, such as the accelerometer, microcontroller and RF module. I decided to design a custom PCB and later order it, because there are too much and too small components to solder onto a development board.
+The remote PCB connects all components together, such as the accelerometer, microcontroller and RF module. I decided to design a custom PCB and later order it, because there are too much and too small components to solder onto a development board. The WSBR PCB should have the following features according to the HW Concept. [\ref{sec:HW Concept}]
 
-\begin{enumerate}
-    \item 
-\end{enumerate}
+\begin{itemize}
+    \item Battery charging through USB-C with battery level monitoring.
+    \item Battery level monitoring when power button is pressed once.
+    \item Start remote, when power button is pressed once and then again for longer.
+    \item Flash MCU using USB-DFU mode when pressing the boot button.
+    \item Use an accelerometer or three membrane buttons as a trigger to count points.
+    \item Send data via RF (nRF24L01) to WSB and show the remote state with an RGB LED.
+\end{itemize}
+
+
+\subsection{Schematics}
+The schematics were drawn using Altium Designer and are stored in the "5\_Hardware\\WSBR\_Board" directory. Full Schematics here: [\ref{fig:Remote Schematics}]
+
+\label{ssec:Schematics}
+
+\subsubsection{Battery Management Circuit}
+J1 (USB-C port) is used as the charging port. It is configured to deliver a maximum current of 3A according to Microchip AN1953 \cite{AN1953}. Additionally, the 2 data lines of J1 are tied to the microcontroller through an ESD protection IC (U2) to program it in the field without having to use an STLINK. For the commissioning, TP3 and TP4 are populated to power the PCB with a lab bench power supply.
+
+The battery is charged to 4.2V through U4 (STNS01) using the CC-CV method. The fast charging current of U4 is set to 125mA using R5 \cite{DS_STNS01}. As long as the temperature stays between 0°C and 45°C, which is measured by R8 (shall be placed near to the battery).
+$$I_{CHG}=\frac{U_{Iset} \cdot K}{R_5}=\frac{1V \cdot 200}{1.6k\Omega}=125mA$$
+
+All components on the PCB are supplied by the LDO of U4, which has a constant output voltage of 3.1V. The main 3.1V rail is only enabled if U5 is turned on. This ensures that the battery isn't drained when the remote isn't even being used. The Load switches U5 \& U6 are enabled if at least one of the following conditions is met.
+\begin{itemize}
+    \item Power Button S3 is pressed. (Once pressed the MCU pulls the enable signal high.)
+    \item The MCU pulls the enable signal high.
+    \item USB-C connected, and therefore the battery is charging.
+\end{itemize}
+If the circuit for U5 doesn't work, there's an alternative switch (S4), to bridge the load switch and use as the new "but boring" power switch.
+
+To measure the battery voltage and display the level, the MCU measures half of the battery voltage using its internal ADC and an external voltage divider (R10 \& R11).
+
+\begin{figure}[H]
+	\centering
+        \framebox{
+	\includegraphics[width=16.7cm, trim={0.7cm 16cm 12cm 0.6cm}, clip, page=1]{../../5_Hardware/WSBR_Board/Project Outputs for WSBR_Board/WSBR_Board.PDF}}
+	\caption{Battery Management Circuit}
+	\label{fig:Battery Management Circuit}
+\end{figure}
