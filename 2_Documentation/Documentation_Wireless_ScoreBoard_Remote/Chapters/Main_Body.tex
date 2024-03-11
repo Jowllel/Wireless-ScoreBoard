@@ -123,3 +123,29 @@ To measure the battery voltage and display the level, the MCU measures half of t
 	\caption{Battery Management Circuit}
 	\label{fig:Battery Management Circuit}
 \end{figure}
+
+\subsection{Schematics Review}
+ \label{ssec:Remote Schematics Review}
+ The following changes to the project are being made after the review with Mr. Malarcarne. (Git tag before review: "WSBR/Board/V1.0")
+ \begin{itemize}
+     \item In the HW concept, complete the power path by feeding the signal from the load switch to board power.
+     \item Add a capacitor in parallel to R10 to filter the ADC voltage.
+     \item Add a list of the alternate functions of the MCU to the documentation.
+     \item Add a vibration motor to the remote to give a haptic feedback to the user.
+     \item calculate the charging time of the battery.
+     \item Write chapter about RF module decision and vibration motors.
+ \end{itemize}
+
+ And check the following points:
+ \begin{itemize}
+     \item Alternate function mapping of the MCU.
+     \item Maybe change nRF24 to another RF module with higher range (lower frequency).
+     \item Accelerometer click recognition and maximum sample frequency.
+ \end{itemize}
+
+ And some further thoughts:
+ \begin{itemize}
+     \item The RF antenna should point away from the body into the air and should be as far as possible away from the battery.
+     \item "Keep Alive" in SW and give feedback, whether the Display and remote are connected to each other and resend codes, that weren't. (ping feature)
+     \item For the next time, separate signal and power hardware concepts from each other. Use the same blocks but different connection layers.
+ \end{itemize}
