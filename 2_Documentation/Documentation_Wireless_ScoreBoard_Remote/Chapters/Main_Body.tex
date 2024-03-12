@@ -105,6 +105,7 @@ J1 (USB-C port) is used as the charging port. It is configured to deliver a maxi
 
 The battery is charged to 4.2V through U4 (STNS01) using the CC-CV method. The fast charging current of U4 is set to 125mA using R5 \cite{DS_STNS01}. As long as the temperature stays between 0°C and 45°C, which is measured by R8 (shall be placed near to the battery).
 $$I_{CHG}=\frac{U_{Iset} \cdot K}{R_5}=\frac{1V \cdot 200}{1.6k\Omega}=125mA$$
+$$t_{CHG}=\frac{It_{BAT}}{I_{CHG}}=\frac{240mAh}{125mA}=1.92h$$
 
 All components on the PCB are supplied by the LDO of U4, which has a constant output voltage of 3.1V. The main 3.1V rail is only enabled if U5 is turned on. This ensures that the battery isn't drained when the remote isn't even being used. The Load switches U5 \& U6 are enabled if at least one of the following conditions is met.
 \begin{itemize}
@@ -124,13 +125,22 @@ To measure the battery voltage and display the level, the MCU measures half of t
 	\label{fig:Battery Management Circuit}
 \end{figure}
 
+\subsubsection{RF module switch}
+\label{sssec:RF module switch}
+\cite{HC_12_doc}
+\cite{RF_Modules_Comparison}
+
+\subsubsection{Vibration Motor}
+\label{sssec:Vibration Motor}
+\cite{Vibration_Motors}
+
+
 \subsection{Schematics Review}
  \label{ssec:Remote Schematics Review}
  The following changes to the project are being made after the review with Mr. Malarcarne. (Git tag before review: "WSBR/Board/V1.0")
  \begin{itemize}
      \item In the HW concept, complete the power path by feeding the signal from the load switch to board power.
      \item Add a capacitor in parallel to R10 to filter the ADC voltage.
-     \item Add a list of the alternate functions of the MCU to the documentation.
      \item Add a vibration motor to the remote to give a haptic feedback to the user.
      \item calculate the charging time of the battery.
      \item Write chapter about RF module decision and vibration motors.
