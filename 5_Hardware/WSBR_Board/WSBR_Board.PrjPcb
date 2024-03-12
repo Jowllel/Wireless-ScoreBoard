@@ -123,7 +123,7 @@ Value=Wireless ScoreBoard
 
 [Parameter3]
 Name=Revision
-Value=1.0
+Value=1.1
 
 [Parameter4]
 Name=SubProject
@@ -1189,8 +1189,8 @@ UpdateToLatestRevision=1
 PartTypes=0
 ComponentLibIdentifierKind0=Library Name Only
 ComponentLibraryIdentifier0=ETHZ Vault
-ComponentDesignItemID0=CMPL-001-0518-A.1
-ComponentSymbolReference0=STNS01
+ComponentDesignItemID0=CMP-03063-1
+ComponentSymbolReference0=Generic Motor
 ComponentUpdate0=1
 ComponentIsDeviceSheet0=0
 FullReplace=1
@@ -1237,7 +1237,7 @@ ParameterUpdate13=1
 ModelTypeGroup0=PCBLIB
 ModelTypeUpdate0=1
 ModelType0=PCBLIB
-ModelName0=SON45P300X80_HS-13N
+ModelName0=VZ43FC1B5640007L
 ModelUpdate0=1
 
 [DatabaseUpdateOptions]
