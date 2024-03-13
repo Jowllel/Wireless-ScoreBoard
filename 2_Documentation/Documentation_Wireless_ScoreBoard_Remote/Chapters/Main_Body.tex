@@ -127,8 +127,27 @@ To measure the battery voltage and display the level, the MCU measures half of t
 
 \subsubsection{RF module switch}
 \label{sssec:RF module switch}
+During the review for the WSBR Board V1.0, Mr. Malarcarne mentioned that the range of the RF Module (nRF24) could be too small to cover a whole playfield. This is due to the nRF24's frequency of 2.4GHz which allows a high data rate but much lower frequencies, than comparable modules. But for the WSB I'd need long range and a low data rate, because the remote send single byte information, of which button was pressed.
+
+So I decided to study some alternatives with a longer range and therefore lower frequency, 433MHz or 868MHz for example \cite{RF_Modules_Comparison}. And after some research I had 2 options, either the LoRa RA-02 Module or the HC\_12 module.
+
+\subsubsection{RA-02}
+The RA-02 RF module is based on the popular SX1278 IC. This allows the RA-02 to use LoRa, a popular RF protocol used mostly for IoT applications. LoRa is optimized for use over long range with relative low data rates. The RA-02 with an antenna costs under 3 CHF on AliExpress and is also widely available on sites like DigiKey or Conrad. To communicate with the MCU, the RA-02 uses SPI and external interrupt lines, but the configuration of the module is rather complicated. But there's a library to use the RA-02 with an STM32 using HAL. But I think that the RA-02 would fit in really well, especially the design language of the WSB.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=6cm]{2_Documentation/Documentation_Wireless_ScoreBoard_Remote/Resources/RA-02.jpg}
+	\caption{RF module: RA-02}
+	\label{fig:RA-02}
+\end{figure}
+
+\subsubsection{HC\_12} 
 \cite{HC_12_doc}
-\cite{RF_Modules_Comparison}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=6cm]{2_Documentation/Documentation_Wireless_ScoreBoard_Remote/Resources/HC12.jpg}
+	\caption{RF module: HC\_12}
+	\label{fig:HC_12}
+\end{figure}
 
 \subsubsection{Vibration Motor}
 \label{sssec:Vibration Motor}
