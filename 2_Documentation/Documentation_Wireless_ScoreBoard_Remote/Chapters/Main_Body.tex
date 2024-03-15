@@ -141,6 +141,7 @@ The RA-02 RF module is based on the popular SX1278 IC. This allows the RA-02 to 
 \end{figure}
 
 \subsubsection{HC\_12} 
+The main advantage of the HC\_12 RF Module is in my opinion its simplicity. To communicate with the HC\_12 UART is used and one additional set pin. If the set pin is in the low state, the module can be configured using AT commands. There are under 10 simple commands to set the parameters such as: baud rate, transmission power, RF channel. If the set pin is in the high state, all UART packet is sent directly to the other transceiver. But on the other hand is the HC\_12 not as available online, I've bought it on AliExpress. for about 1.5 CHF. The HC\_12 has a range of up to 2km, this should be sufficient for the WSB. Because of that and its simplicity, I chose the HC\_12 for the WSB.
 \cite{HC_12_doc}
 \begin{figure}[H]
 	\centering
@@ -149,10 +150,21 @@ The RA-02 RF module is based on the popular SX1278 IC. This allows the RA-02 to 
 	\label{fig:HC_12}
 \end{figure}
 
-\subsubsection{Vibration Motor}
+\subsubsection{Vibration Motor Decision}
 \label{sssec:Vibration Motor}
-\cite{Vibration_Motors}
+Mr. Malacarne mentioned, that it would be nice to give a haptic feedback to the user of the remote. This will be achieved through a vibration motor. I personally never worked with vibration motors before, but in the past while using some devices I noticed that there are huge differences between how "good" the vibrations feel. I especially like the vibration of the iPhone, it feels expensive and of high quality. After some research, I noticed, that there are a lot of different techniques to vibrate a device. But you can sort them into two ordinate technologies. \cite{Vibration_Motors}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=16cm]{2_Documentation/Documentation_Wireless_ScoreBoard_Remote/Resources/ERM_LRA.png}
+	\caption{Vibration motor technologies (CC NC-SA)}
+	\label{fig:Vibration motor technologies}
+\end{figure}
 
+\subsubsection{ERM Vibration Motor}
+Eccentric Rotating Mass vibration motors vibrate, by spinning an off-centre mass with usually a DC-motor. They can't accelerate and decelerate as fast as LRAs and don't give much control over the feel of the vibration. On the other hand, they're easy to implement, because they can just be switched on and off with an electrical switch (FET). ERM Motors shouldn't be used for direct haptic feedback such as switch mechanics simulation or tactile vibrations.
+
+\subsubsection{LRA Vibration Motor}
+Linear Resonant Actuator vibration motors on the other hand are mostly used in modern smartphones like the iPhone. They make a defined and controllable "knock" in one direction. LRAs vibrate by accelerating a mass using a magnetic field. The coils to generate this field are directly controllable with the driver circuitry. This means that an LRA has to be driven by AC (switching signal) in order to vibrate. But this allows for much more control over the feel of the vibration.
 
 \subsection{Schematics Review}
  \label{ssec:Remote Schematics Review}
