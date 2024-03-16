@@ -106,11 +106,13 @@ UniqueID=A995F4CA-3C98-4058-A598-3D04EB50227C
 Description=default
 AllowFabrication=0
 ParameterCount=0
-VariationCount=4
+VariationCount=6
 Variation1=Designator=S?|UniqueId=\SGIPKHLF|Kind=1|AlternatePart= 
 Variation2=Designator=R?|UniqueId=\KACLIXOW|Kind=1|AlternatePart= 
 Variation3=Designator=R?|UniqueId=\FTYAIHXZ|Kind=1|AlternatePart= 
-Variation4=Designator=R?|UniqueId=\TNULXQAL|Kind=1|AlternatePart= 
+Variation4=Designator=R?|UniqueId=\TNULXQAL|Kind=0|AlternatePart= 
+Variation5=Designator=J2|UniqueId=\IATMFOGE|Kind=0|AlternatePart= 
+Variation6=Designator=S1|UniqueId=\FSKKELQF|Kind=0|AlternatePart= 
 ParamVariationCount=0
 
 [Parameter1]
@@ -1195,8 +1197,8 @@ UpdateToLatestRevision=1
 PartTypes=0
 ComponentLibIdentifierKind0=Library Name Only
 ComponentLibraryIdentifier0=ETHZ Vault
-ComponentDesignItemID0=CMP-02911-1
-ComponentSymbolReference0=USB4105-GF-A
+ComponentDesignItemID0=CMP-02820-1
+ComponentSymbolReference0=CON 4x1 Male
 ComponentUpdate0=1
 ComponentIsDeviceSheet0=0
 FullReplace=1
@@ -1243,7 +1245,7 @@ ParameterUpdate13=1
 ModelTypeGroup0=PCBLIB
 ModelTypeUpdate0=1
 ModelType0=PCBLIB
-ModelName0=USB4105-GF-A
+ModelName0=M20-8890445R
 ModelUpdate0=1
 
 [DatabaseUpdateOptions]
