@@ -44,7 +44,6 @@ CrossRefPorts=3
 CrossRefCrossSheets=1
 CrossRefSheetEntries=0
 CrossRefFollowFromMainSettings=1
-CurrentVariant=default
 
 [Preferences]
 PrefsVaultGUID=
@@ -101,19 +100,9 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[ProjectVariant1]
-UniqueID=A995F4CA-3C98-4058-A598-3D04EB50227C
-Description=default
-AllowFabrication=0
-ParameterCount=0
-VariationCount=6
-Variation1=Designator=S?|UniqueId=\SGIPKHLF|Kind=1|AlternatePart= 
-Variation2=Designator=R?|UniqueId=\KACLIXOW|Kind=1|AlternatePart= 
-Variation3=Designator=R?|UniqueId=\FTYAIHXZ|Kind=1|AlternatePart= 
-Variation4=Designator=R?|UniqueId=\TNULXQAL|Kind=0|AlternatePart= 
-Variation5=Designator=J2|UniqueId=\IATMFOGE|Kind=0|AlternatePart= 
-Variation6=Designator=S1|UniqueId=\FSKKELQF|Kind=0|AlternatePart= 
-ParamVariationCount=0
+[GeneratedDocument1]
+DocumentPath=Project Outputs for WSBR_Board\Design Rule Check - WSBR_Board.html
+DItemRevisionGUID=
 
 [Parameter1]
 Name=Author
