@@ -57,10 +57,10 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define PWR_LED3_Pin GPIO_PIN_13
-#define PWR_LED3_GPIO_Port GPIOC
-#define PWR_LED4_Pin GPIO_PIN_14
-#define PWR_LED4_GPIO_Port GPIOC
+#define PWR_LED2_Pin GPIO_PIN_13
+#define PWR_LED2_GPIO_Port GPIOC
+#define PWR_LED1_Pin GPIO_PIN_14
+#define PWR_LED1_GPIO_Port GPIOC
 #define OSC_IN_Pin GPIO_PIN_0
 #define OSC_IN_GPIO_Port GPIOH
 #define NC1_Pin GPIO_PIN_1
@@ -91,6 +91,8 @@ void Error_Handler(void);
 #define LED_G_GPIO_Port GPIOB
 #define LED_B_Pin GPIO_PIN_15
 #define LED_B_GPIO_Port GPIOB
+#define MCO_Pin GPIO_PIN_8
+#define MCO_GPIO_Port GPIOA
 #define PWR_SW_Pin GPIO_PIN_9
 #define PWR_SW_GPIO_Port GPIOA
 #define PWR_EN_Pin GPIO_PIN_10
@@ -115,10 +117,10 @@ void Error_Handler(void);
 #define ACC_SCL_GPIO_Port GPIOB
 #define ACC_SDA_Pin GPIO_PIN_7
 #define ACC_SDA_GPIO_Port GPIOB
-#define PWR_LED1_Pin GPIO_PIN_8
-#define PWR_LED1_GPIO_Port GPIOB
-#define PWR_LED2_Pin GPIO_PIN_9
-#define PWR_LED2_GPIO_Port GPIOB
+#define PWR_LED4_Pin GPIO_PIN_8
+#define PWR_LED4_GPIO_Port GPIOB
+#define PWR_LED3_Pin GPIO_PIN_9
+#define PWR_LED3_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 
