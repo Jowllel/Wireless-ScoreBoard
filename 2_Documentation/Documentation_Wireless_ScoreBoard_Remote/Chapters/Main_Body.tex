@@ -190,3 +190,14 @@ Linear Resonant Actuator vibration motors on the other hand are mostly used in m
      \item "Keep Alive" in SW and give feedback, whether the Display and remote are connected to each other and resend codes, that weren't. (ping feature)
      \item For the next time, separate signal and power hardware concepts from each other. Use the same blocks but different connection layers.
  \end{itemize}
+
+
+
+ \subsection{PCB Assembly}
+ \label{ssec:PCB Assembly}
+
+ During the assembly of the remote PCB, I noticed a couple of possible improvements to the design.
+ \begin{enumerate}
+     \item The accelerometer U1 doesn't have a silkscreen, outlining its dimensions, like the BMS U4 has. During population, it was quite hard to place the accelerometer centred on the pads, due to the missing silkscreen and the pads under the IC. Next time, I would add a silkscreen to the accelerometer's footprint. 
+     \item Additionally, I found out that I forgot to label the buttons (Boot, Power, Reset) on the silkscreen layer. This makes it hard for the user to use the product in the end.
+ \end{enumerate}
