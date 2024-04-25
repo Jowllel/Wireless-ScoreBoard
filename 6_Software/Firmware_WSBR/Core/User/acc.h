@@ -11,6 +11,6 @@
 #ifndef USER_ACC_H_
 #define USER_ACC_H_
 
-
+#include "main.h"
 
 #endif /* USER_ACC_H_ */

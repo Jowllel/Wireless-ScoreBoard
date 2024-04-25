@@ -32,7 +32,14 @@ extern "C" {
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include <stdbool.h>
+
 #include "usermain.h"
+
+#include "bms.h"
+#include "acc.h"
+#include "hc12.h"
+#include "misc.h"
 
 /* USER CODE END Includes */
 

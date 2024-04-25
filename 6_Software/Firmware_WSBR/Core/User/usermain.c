@@ -14,6 +14,10 @@
 
 void usermain(void)
 {
+	HAL_Delay(100);
+
+	HAL_GPIO_WritePin(PWR_LED1_GPIO_Port, PWR_LED1_Pin, 1);
+	bms_enPwr(false);
 
 	while(1)
 	{

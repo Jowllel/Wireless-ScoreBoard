@@ -11,6 +11,6 @@
 #ifndef USER_HC12_H_
 #define USER_HC12_H_
 
-
+#include "main.h"
 
 #endif /* USER_HC12_H_ */

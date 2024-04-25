@@ -11,6 +11,6 @@
 #ifndef USER_MISC_H_
 #define USER_MISC_H_
 
-
+#include "main.h"
 
 #endif /* USER_MISC_H_ */
