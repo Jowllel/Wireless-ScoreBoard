@@ -32,6 +32,15 @@ extern "C" {
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include <stdbool.h>
+
+#include "usermain.h"
+
+#include "bms.h"
+#include "acc.h"
+#include "hc12.h"
+#include "misc.h"
+
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -79,20 +88,12 @@ void Error_Handler(void);
 #define BMS_CEN_GPIO_Port GPIOA
 #define BMS_CHG_Pin GPIO_PIN_6
 #define BMS_CHG_GPIO_Port GPIOA
-#define BT_G_Pin GPIO_PIN_2
-#define BT_G_GPIO_Port GPIOB
-#define BT_Y_Pin GPIO_PIN_10
-#define BT_Y_GPIO_Port GPIOB
-#define BT_R_Pin GPIO_PIN_12
-#define BT_R_GPIO_Port GPIOB
 #define LED_R_Pin GPIO_PIN_13
 #define LED_R_GPIO_Port GPIOB
 #define LED_G_Pin GPIO_PIN_14
 #define LED_G_GPIO_Port GPIOB
 #define LED_B_Pin GPIO_PIN_15
 #define LED_B_GPIO_Port GPIOB
-#define MCO_Pin GPIO_PIN_8
-#define MCO_GPIO_Port GPIOA
 #define PWR_SW_Pin GPIO_PIN_9
 #define PWR_SW_GPIO_Port GPIOA
 #define PWR_EN_Pin GPIO_PIN_10
@@ -109,10 +110,6 @@ void Error_Handler(void);
 #define VIB_GPIO_Port GPIOA
 #define SW_O_Pin GPIO_PIN_3
 #define SW_O_GPIO_Port GPIOB
-#define ACC_IRQ2_Pin GPIO_PIN_4
-#define ACC_IRQ2_GPIO_Port GPIOB
-#define ACC_IRQ1_Pin GPIO_PIN_5
-#define ACC_IRQ1_GPIO_Port GPIOB
 #define ACC_SCL_Pin GPIO_PIN_6
 #define ACC_SCL_GPIO_Port GPIOB
 #define ACC_SDA_Pin GPIO_PIN_7
