@@ -1,0 +1,46 @@
+\chapter*{WSB Communication Specification}
+
+
+\section*{Configuration}
+
+The communication of the WSB works via an HC\_12 RF module. The Commands are then sent from the remote (WSBR) to the display (WSBD), where a direct UART is used. The UART is configured as following.
+
+\begin{table}[H]
+    \centering
+\begin{tabular}{||p{6cm} | p{4cm} ||} 
+ \hline
+     HC\_12 Baud Rate & 9600 \\ 
+ \hline
+     HC\_12 RF Channel & 433.4Mhz \\ 
+ \hline
+     HC\_12 Transmission mode & Default (FU3) \\ 
+ \hline
+     HC\_12 Power mode & +20dBm \\ 
+ \hline
+     OTA UART mode & 8N1 \\ 
+ \hline
+\end{tabular}
+    \caption{UART / HC\_12 Configuration}
+\end{table}
+
+\section*{Commands}
+
+All commands are ended with CR+LF. An the response of the display if the command was executed successfully is the command itself, but "AT" gets replaced with "OK". e.g. "AT+RESET" $\rightarrow$ "OK+RESET".
+
+\begin{table}[H]
+    \centering
+\begin{tabular}{||p{2cm} | p{4.5cm} | p{5cm} | p{3.5cm} ||} 
+ \hline
+ Command & Description & Options & Example \\ [0.5ex] 
+ \hline\hline
+     Reset & Reset all counts / points. &  & AT+RESET \\ 
+ \hline
+     Buzz & Activate the buzzer. &  & AT+BUZZ \\ 
+ \hline
+     Flip & \makecell[lt]{Flip the points on the \\ display between \\ the teams.} &  & AT+FLIP \\ 
+ \hline
+     Count & update a counter. & \makecell[lt]{U/D: Count Up/Down \\ P/S: Count Point/Set \\ A/B: Count for Team A/B} & \makecell[lt]{AT+COUNTUPA \\ AT+COUNTUSB} \\ 
+ \hline
+\end{tabular}
+    \caption{Commands list}
+\end{table}
