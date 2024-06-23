@@ -37,3 +37,10 @@ uint8_t bms_getBatPercent(void)
 	 return (uint8_t)(batPercent);
 }
 
+bool bms_getChargingState(void)
+{
+	return !HAL_GPIO_ReadPin(BMS_CHG_GPIO_Port, BMS_CHG_Pin);
+}
+
+
+

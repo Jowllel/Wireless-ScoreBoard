@@ -13,4 +13,14 @@
 
 #include "main.h"
 
+
+typedef enum
+{
+	P0_SOURCE, P25_SOURCE, P50_SOURCE, P75_SOURCE, P100_SOURCE, P0_CHARGING, P25_CHARGING, P50_CHARGING, P75_CHARGING, P100_CHARGING, P0
+} BatLedStateEnum;
+
+
+void setBatLed(BatLedStateEnum state);
+
+
 #endif /* USER_MISC_H_ */
