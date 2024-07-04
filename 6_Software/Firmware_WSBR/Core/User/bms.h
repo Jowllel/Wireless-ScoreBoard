@@ -16,5 +16,6 @@
 void bms_enPwr(bool enable);
 double bms_getBatVoltage(void);
 uint8_t bms_getBatPercent(void);
+bool bms_getChargingState(void);
 
 #endif /* USER_BMS_H_ */

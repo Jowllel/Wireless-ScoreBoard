@@ -34,12 +34,15 @@ extern "C" {
 
 #include <stdbool.h>
 
+#include "STM32-ADXL345/ADXL.h"
+
 #include "usermain.h"
 
 #include "bms.h"
 #include "acc.h"
 #include "hc12.h"
 #include "misc.h"
+
 
 /* USER CODE END Includes */
 
